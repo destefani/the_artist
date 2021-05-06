@@ -26,7 +26,7 @@ class Autoencoder(nn.Module):
         self.bottleneck = nn.Linear(in_features=4096, out_features=self.nz)
 
         self.decoder = nn.Sequential(
-            nn.ConvTranspose2d(in_channels=nz, out_channels=(64 * 8), kernel_size=4, stride=1, padding=0, bias=False),
+            nn.ConvTranspose2d(in_channels=self.nz, out_channels=(64 * 8), kernel_size=4, stride=1, padding=0, bias=False),
             nn.BatchNorm2d(num_features=(64 * 8)),
             nn.ReLU(),
             nn.ConvTranspose2d(in_channels=(64 * 8), out_channels=(64 * 4), kernel_size=4, stride=2, padding=1, bias=False),
