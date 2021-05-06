@@ -2,7 +2,6 @@ import torch
 from torch import nn
 import torch.nn.functional as F 
 
-
 class Autoencoder(nn.Module):
     def __init__(self, nz):
         super(Autoencoder, self).__init__()
